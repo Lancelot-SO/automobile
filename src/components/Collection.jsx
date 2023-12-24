@@ -14,6 +14,7 @@ import { BsFuelPumpDiesel } from "react-icons/bs";
 import { MdElectricalServices } from "react-icons/md";
 import { FaTruckFast } from "react-icons/fa6";
 import { PiArrowCircleLeftLight, PiArrowCircleRightLight } from "react-icons/pi";
+import Slider from '../components/common/Slider'
 
 
 const Collection = () => {
@@ -168,7 +169,7 @@ const Collection = () => {
                         </div>
                     </div>
                 </div>
-                <div className='main-cards'>
+                {/* <div className='main-cards'>
                     <div className='card-arrows'>
                         <span className='card-left-arrow'><PiArrowCircleLeftLight /></span>
                         <span className='card-right-arrow'><PiArrowCircleRightLight /></span>
@@ -195,6 +196,7 @@ const Collection = () => {
                                                     <h4>{car.name}</h4>
                                                     <div className='price-location'>
                                                         <span className='price'>${car.price}</span>
+
                                                         <span className='location'>{car.map}<b>{car.location}</b> </span>
                                                     </div>
                                                     <div className='tank'>
@@ -222,7 +224,10 @@ const Collection = () => {
 
 
 
-                </div>
+                </div> */}
+
+                <Slider />
+
                 <div className='category'>
                     <h4>Availabe 50+ Cars</h4>
                     <button>View All Sedan</button>
