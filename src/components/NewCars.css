@@ -5,7 +5,7 @@
 
 .collections {
     padding: 2rem 4rem;
-    margin: 2rem 2rem;
+    margin: 2rem 0;
     width: 100%;
 }
 
@@ -52,16 +52,17 @@
     padding: 10px;
 }
 
-.main-cards {
+.recent-car {
     display: flex;
-    gap: 10px;
-    position: relative;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.car-card {
+.cars-card {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 50px;
 }
 
 .card {
@@ -72,7 +73,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border-radius: 5px;
-    width: 350px;
+    width: 400px;
 }
 
 .card-arrows {
@@ -239,32 +240,29 @@
     margin-bottom: 5px;
 }
 
-.views {
-    margin-top: 10px;
-}
-
-.view-more {
+.button-btn {
+    width: 200px;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: #1cb71c;
+    border-radius: 5px;
+    border: none;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    padding-left: 20px;
-    gap: 10px;
+    justify-content: center;
+    gap: 5px;
 }
 
-.views:hover {
-    color: orange;
+.button-btn:hover {
+    background: linear-gradient(30deg, #ebd3d3, #e8edef, #a8dcbe, #becdd5);
 }
 
-.icon {
-    font-size: 20px;
-}
-
-.view-more span {
-    margin-bottom: 3px;
-}
-
-.view-more span:hover {
-    color: orange;
+.brand-new-logo {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    margin-left: 35px;
 }
 
 .category {
@@ -327,14 +325,9 @@
     }
 
     .header-collections h1 {
-        padding-left: 0;
-        width: 300px;
-    }
-
-    .collections {
-        width: 100%;
-        margin: 2rem 0;
-        padding: 2rem 4rem;
+        padding-left: 10px;
+        width: 400px;
+        height: auto;
     }
 
     .collections h3 {
@@ -343,10 +336,10 @@
 
     .links {
         flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
         margin-top: 1rem;
+        width: 350px;
         gap: 10px;
+        margin-right: 10px;
     }
 
     .links a {
@@ -354,12 +347,19 @@
         margin-bottom: 0.5rem;
     }
 
-    .main-cards {
+    .recent-car {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cars-card {
+        display: flex;
         flex-direction: column;
     }
 
     .card {
         width: 100%;
+
     }
 
     .img-card {

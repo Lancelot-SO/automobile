@@ -33,7 +33,7 @@ const Collection = () => {
         {
             id: 1,
             img: cadillac,
-            name: "Mercedes-Benx C-Class-2023",
+            name: "Cadillac Escalade",
             price: "17,899",
             map: <SlLocationPin />,
             location: "Greater Accra",
@@ -53,7 +53,7 @@ const Collection = () => {
         {
             id: 2,
             img: jeep,
-            name: "Mercedes-Benx C-Class-2023",
+            name: "Jeep Wrangler",
             price: "17,899",
             map: <SlLocationPin />,
             location: "Greater Accra",
@@ -73,7 +73,7 @@ const Collection = () => {
         {
             id: 3,
             img: range,
-            name: "Mercedes-Benx C-Class-2023",
+            name: "Range Rover Velar",
             price: "17,899",
             map: <SlLocationPin />,
             location: "Greater Accra",
@@ -93,7 +93,7 @@ const Collection = () => {
         {
             id: 4,
             img: lambo,
-            name: "Mercedes-Benx C-Class-2023",
+            name: "Lamborghini Aventador",
             price: "17,899",
             map: <SlLocationPin />,
             location: "Greater Accra",
@@ -113,7 +113,7 @@ const Collection = () => {
         {
             id: 5,
             img: lambo,
-            name: "Mercedes-Benx C-Class-2023",
+            name: "Lamborghini Aventador",
             price: "17,899",
             map: <SlLocationPin />,
             location: "Greater Accra",
@@ -133,7 +133,7 @@ const Collection = () => {
         {
             id: 6,
             img: lambo,
-            name: "Mercedes-Benx C-Class-2023",
+            name: "Lamborghini Aventador",
             price: "17,899",
             map: <SlLocationPin />,
             location: "Greater Accra",

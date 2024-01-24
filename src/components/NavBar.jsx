@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Navbar.css";
 import logo from "../assets/car-logo.png"
+import Modal from './Modal';
 // import { Link } from 'react-router-dom';
 
 import { FaBars, FaTimes } from "react-icons/fa"
@@ -11,6 +12,21 @@ import { IoMdPricetags, IoMdHeartEmpty, IoIosArrowDown } from "react-icons/io";
 const NavBar = () => {
 
     const [nav, setNav] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
+
+    const handleSignUpClick = (event) => {
+        event.preventDefault(); // Prevent the default behavior of anchor tag
+        toggleModal();
+    };
+
+    const handleInputClick = (event) => {
+        // Prevent the event from reaching the parent (modal background) and closing the modal
+        event.stopPropagation();
+    };
 
     return (
         <header>
@@ -92,10 +108,32 @@ const NavBar = () => {
                                                 </div>
                                             </div>
                                             <div className='side'>
-                                                <div className='side-signup'>
+                                                <div className='side-signup' onClick={handleSignUpClick}>
                                                     <span><RiAccountCircleLine width={40} height={40} /></span>
-                                                    <a href="/">Sign Up</a>
+                                                    <button>Sign Up</button>
                                                 </div>
+
+                                                {/* Modal */}
+                                                {showModal && (
+                                                    <Modal onClose={toggleModal}>
+                                                        {/* Content of the modal (username, email, password fields) */}
+                                                        <form>
+                                                            <label>
+                                                                Username:
+                                                                <input type="text" name="username" />
+                                                            </label>
+                                                            <label>
+                                                                Email:
+                                                                <input type="email" name="email" />
+                                                            </label>
+                                                            <label>
+                                                                Password:
+                                                                <input type="password" name="password" />
+                                                            </label>
+                                                            <button type="submit">Sign Up</button>
+                                                        </form>
+                                                    </Modal>
+                                                )}
                                             </div>
 
                                         </div>
@@ -130,9 +168,30 @@ const NavBar = () => {
                                 <p>SAVE</p>
                             </div>
                         </div>
-                        <div className='signup'>
+                        <div className='signup' onClick={handleSignUpClick}>
                             <span><RiAccountCircleLine width={20} height={20} /></span>
-                            <a href="/">Sign Up</a>
+                            <button>Sign Up</button>
+                            {/* Modal */}
+                            {showModal && (
+                                <Modal onClose={toggleModal}>
+                                    {/* Content of the modal (username, email, password fields) */}
+                                    <form>
+                                        <label>
+                                            Username:
+                                            <input type="text" name="username" onClick={handleInputClick} />
+                                        </label>
+                                        <label>
+                                            Email:
+                                            <input type="email" name="email" onClick={handleInputClick} />
+                                        </label>
+                                        <label>
+                                            Password:
+                                            <input type="password" name="password" onClick={handleInputClick} />
+                                        </label>
+                                        <button type="submit">Sign Up</button>
+                                    </form>
+                                </Modal>
+                            )}
                         </div>
 
                     </div>

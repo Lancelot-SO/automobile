@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 // Import Swiper styles
-
+import "./style.css";
 import lambo from "../../assets/lamborghini.webp";
 import range from "../../assets/range.webp";
 import cadillac from "../../assets/cadillac.jpg";
@@ -44,7 +44,7 @@ const Sli = () => {
     {
       id: 1,
       img: cadillac,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Cadillac Escalade",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -64,7 +64,7 @@ const Sli = () => {
     {
       id: 2,
       img: jeep,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Jeep Wrangler",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -84,7 +84,7 @@ const Sli = () => {
     {
       id: 3,
       img: range,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Range Rover Velar",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -104,7 +104,7 @@ const Sli = () => {
     {
       id: 3,
       img: range,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Range Rover Velar",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -124,7 +124,7 @@ const Sli = () => {
     {
       id: 3,
       img: range,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Range Rover Velar",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -144,7 +144,7 @@ const Sli = () => {
     {
       id: 3,
       img: range,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Range Rover Velar",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -161,12 +161,12 @@ const Sli = () => {
       view: "View Details",
       electricity: "electricity",
     },
- 
-   
+
+
     {
       id: 4,
       img: lambo,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Lamborghini Aventador",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -186,7 +186,7 @@ const Sli = () => {
     {
       id: 5,
       img: lambo,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Lamborghini Aventador",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -206,7 +206,7 @@ const Sli = () => {
     {
       id: 6,
       img: lambo,
-      name: "Mercedes-Benx C-Class-2023",
+      name: "Lamborghini Aventador",
       price: "17,899",
       map: <SlLocationPin />,
       location: "Greater Accra",
@@ -228,80 +228,75 @@ const Sli = () => {
   return (
     <>
       <Carousel responsive={responsive}>
-
-     
-
         <div>
-        <div className="car-card">
-          {cars.map((car) => {
-            return (
-              <div className="container mt-5">
-                
-                <div className="card" key={car.id}>
-                    
-                  <div className="img-card">
+          <div className="car-card">
+            {cars.map((car) => {
+              return (
+                <div className="container mt-5">
 
-                    <img src={car.img} alt="suv" />
+                  <div className="card" key={car.id}>
 
-                    {/* <ImageSlider img={""}/> */}
+                    <div className="img-card">
 
+                      <img src={car.img} alt="suv" />
 
+                      {/* <ImageSlider img={""}/> */}
 
-                    <span className="ten-collections">{car.collection} 10</span>
-                    <span className="heart">{car.heart}</span>
-                    <span className="right-arrow">{car.right}</span>
+                      <span className="ten-collections">{car.collection} 10</span>
+                      <span className="heart">{car.heart}</span>
+                      <span className="right-arrow">{car.right}</span>
 
-                    <div className="slide">
-                      <span className="left-arrow">{car.left}</span>
+                      <div className="slide">
+                        <span className="left-arrow">{car.left}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="main-details">
-                    <div className="details">
-                      <h4>{car.name}</h4>
-                      <div className="price-location">
-                        <span className="price">${car.price}</span>
-                        <span className="location">
-                          {car.map}
-                          <b>{car.location}</b>{" "}
-                        </span>
-                      </div>
-                      <div className="tank">
-                        <span>
-                          {car.speed} {car.miles}
-                        </span>
-                        <span>
-                          {car.tunk}
-                          {car.fueltype}
-                        </span>
-                        <span>
-                          {car.plug} {car.electricity}
-                        </span>
-                      </div>
-                      <div className="border"></div>
-                      <div className="views">
-                        <div className="view-more">
-                          <span className="icon">{car.truck}</span>
-                          <span>
-                            <b>{car.view}</b>
+                    <div className="main-details">
+                      <div className="details">
+                        <h4>{car.name}</h4>
+                        <div className="price-location">
+                          <span className="price">${car.price}</span>
+                          <span className="location">
+                            {car.map}
+                            <b>{car.location}</b>{" "}
                           </span>
+                        </div>
+                        <div className="tank">
+                          <span>
+                            {car.speed} {car.miles}
+                          </span>
+                          <span>
+                            {car.tunk}
+                            {car.fueltype}
+                          </span>
+                          <span>
+                            {car.plug} {car.electricity}
+                          </span>
+                        </div>
+                        <div className="border"></div>
+                        <div className="views">
+                          <div className="view-more">
+                            <span className="icon">{car.truck}</span>
+                            <span>
+                              <b>{car.view}</b>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-        </div>
-        
-{/* DO not remove */}
-{/* IT shawdows the number of cars available for the arrows */}
-{
-    cars.map((a)=>{
-        return <div></div>
-    })
-}
+
+        {/* DO not remove */}
+        {/* IT shawdows the number of cars available for the arrows */}
+        {
+          cars.map((a) => {
+            return <div></div>
+          })
+        }
 
       </Carousel>
     </>

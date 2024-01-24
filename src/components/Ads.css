@@ -1,0 +1,219 @@
+.main {
+    display: flex;
+    background: linear-gradient(30deg, #ebd3d3, #e8edef, #a8dcbe, #becdd5);
+}
+
+.agency {
+    padding: 2rem 4rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.auto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.auto h3 {
+    font-size: 1.5rem
+}
+
+.auto h1 {
+    font-size: 2.6em;
+}
+
+.main-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.card {
+    padding: 2rem;
+}
+
+.card:hover {
+    border: 1px solid #3ea76a;
+    cursor: pointer;
+}
+
+.ads-text {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cash {
+    font-size: 2.5rem;
+}
+
+.aff {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #a8dcbe;
+}
+
+.money {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.guarantee {
+    color: #3ea76a;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.month {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.warranty {
+    color: #3ea76a;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.adverts {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    color: black;
+    gap: 30px;
+    margin: 2rem 0;
+    border: gray;
+    padding: 2rem 0;
+    border-top: 1px solid #a5a2a2;
+    border-bottom: 1px solid #a5a2a2;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    border-right: 1px solid white;
+    align-items: center;
+    padding-right: 60px;
+    width: 400px;
+    gap: 10px;
+    line-height: 50%;
+    color: black;
+}
+
+.container:nth-child(4) {
+    border: none;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.excel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-excel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.excellent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stars {
+    margin-left: 5px;
+
+    /* Adjust as needed */
+}
+
+.star {
+    margin-right: 3px;
+    color: #fff;
+    background-color: #3ea76a;
+    padding: 0.5px;
+}
+
+.trust-pilot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.star-trust {
+    font-size: 1.5rem;
+    color: #3ea76a;
+}
+
+@media (max-width: 767px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .agency {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .auto {
+        width: 100%;
+    }
+
+    .main-cards {
+        display: flex;
+        padding: 0;
+        width: 300px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aff {
+        color: #3ea76a;
+    }
+
+    .adverts {
+        flex-direction: column;
+    }
+
+    .container {
+        border-right: none;
+        padding: 1rem 0;
+        width: auto;
+        margin-left: 0;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .container span {
+        line-height: 100%;
+        font-size: 1rem;
+    }
+
+    .next-excel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rating {
+        display: flex;
+        flex-direction: row;
+        width: 300px;
+    }
+
+}
