@@ -18,7 +18,7 @@ import TopRated from "../../components/TopRated";
 function index() {
   return (
     <>
-      <NavBar />
+   
       <Home />
       <Browse />
       <Brand />
