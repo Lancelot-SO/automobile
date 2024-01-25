@@ -92,7 +92,7 @@
 }
 
 .container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     border-right: 1px solid white;
     align-items: center;
@@ -100,11 +100,11 @@
     width: 400px;
     gap: 10px;
     line-height: 50%;
-    color: black;
+    color: black; */
 }
 
 .container:nth-child(4) {
-    border: none;
+    /* border: none; */
 }
 
 .icon {
@@ -192,17 +192,17 @@
     }
 
     .container {
-        border-right: none;
+        /* border-right: none;
         padding: 1rem 0;
         width: auto;
         margin-left: 0;
         gap: 20px;
-        text-align: center;
+        text-align: center; */
     }
 
     .container span {
-        line-height: 100%;
-        font-size: 1rem;
+        /* line-height: 100%;
+        font-size: 1rem; */
     }
 
     .next-excel {

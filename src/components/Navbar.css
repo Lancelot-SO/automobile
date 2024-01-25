@@ -508,3 +508,47 @@ input:focus {
     font-size: 20px;
     font-weight: bold;
 }
+
+/* Add these styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .navbar-row {
+      flex-direction: column;
+    }
+  
+    .search {
+      margin-top: 20px;
+    }
+  
+    .new-cart {
+      margin-top: 20px;
+    }
+  
+    .bars {
+      margin-top: 20px;
+    }
+  
+    .side-nav {
+      width: 100%;
+    }
+  
+    .side-menu {
+      flex-direction: column;
+    }
+  
+    .tags {
+      flex-direction: column;
+    }
+  
+    .bottom-nav-next {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Original styles below */
+  
+  /* ... (rest of your original styles) */
+  

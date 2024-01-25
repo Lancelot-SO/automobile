@@ -36,7 +36,9 @@
 }
 
 .brand-card:hover {
-    background: linear-gradient(30deg, #ffcccc, #4cc9f0, #2b35af, #cceeff);
+    background-image: linear-gradient(to left top, #d6f6f3, #ddf6fa, #e6f7fe, #eff7ff, #f6f8fd, #f2f4fc, #eef1fb, #ebedfa, #dbe4fa, #c7dcfa, #afd5f9, #92cff6);
+    cursor: pointer;
+    transition: background-image 0.3s;
 }
 
 .brand-container {
@@ -125,3 +127,76 @@
         height: 60px;
     }
 }
+
+/* Add these styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .brands {
+      flex-direction: column;
+    }
+  
+    .brand-board {
+      margin-top: 20px;
+    }
+  
+    .brand-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .brand-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .brand-container img {
+      width: 80%; /* Adjust the width as needed */
+    }
+  
+    .brand-cat {
+      text-align: center;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Original styles below */
+  
+  .brands {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .brand-board {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .brand-card {
+    width: 500px;
+    margin-right: 20px;
+    padding: 2rem;
+    background-color: #faf8fb;
+    box-shadow: none;
+  }
+  
+  .brand-container {
+    position: relative;
+  }
+  
+  .brand-container img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .brand-cat {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* ... (rest of your original styles) */
+  

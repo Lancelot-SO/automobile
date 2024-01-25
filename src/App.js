@@ -5,6 +5,7 @@ import Browse from './components/Browse';
 import Collection from './components/Collection';
 import CompareCar from './components/CompareCar';
 import Home from './components/Home';
+import "bootstrap/dist/css/bootstrap.css";
 // import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import { ToastContainer } from "react-toastify"
 

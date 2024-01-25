@@ -64,3 +64,44 @@
         margin-left: 0;
     }
 }
+
+/* Add these styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .browse {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .browse-container {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Original styles below */
+  
+  .browse {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .browse-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .browse-icon {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* ... (rest of your original styles) */
+  

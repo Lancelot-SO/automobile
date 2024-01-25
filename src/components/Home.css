@@ -1,8 +1,8 @@
 .home {
-    display: flex;
-    background: linear-gradient(to right, #ec5f5f, #ceacac);
-    color: white;
-    padding: 50px 8rem 0 8rem;
+    /* display: flex; */
+    background-image: linear-gradient(to left top, #d3fdee, #d4fbed, #d6f9ec, #d7f7eb, #d8f5ea, #d8f5ee, #daf4f2, #dcf3f4, #e2f3f9, #e9f3fc, #f0f3fc, #f6f4fa);
+    /* color: white; */
+    /* padding: 50px 8rem 0 8rem; */
 }
 
 .home-left {
@@ -357,3 +357,4 @@ span {
         margin-top: 0;
     }
 }
+
