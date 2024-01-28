@@ -12,7 +12,7 @@ const Row2 = () => {
   };
 
   return (
-   <div className="container mt-5" >
+   <div className="container mt-5"  >
      <div className="">
       <Nav tabs style={{position: 'sticky'}}>
         <NavItem>
@@ -57,16 +57,16 @@ const Row2 = () => {
         </NavItem>
       </Nav>
 
-      <div id="section1" className="section" style={{height: '100svh'}}>
+      <div id="section1" className="section" style={{height: 'auto'}}>
        <CarImage />
       </div>
 
-      <div id="section2" className="section" style={{height: '100svh'}}>
+      <div id="section2" className="section" style={{height: 'auto'}}>
         <h4>Section 2 Content</h4>
         <p>This is the content for Section 2.</p>
       </div>
 
-      <div id="section3" className="section" style={{height: '100svh'}}>
+      <div id="section3" className="section" style={{height: 'auto'}}>
         <h4>Section 3 Content</h4>
         <p>This is the content for Section 3.</p>
       </div>

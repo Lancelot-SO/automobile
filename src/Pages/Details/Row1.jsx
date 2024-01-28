@@ -11,7 +11,7 @@ import VerticalDivider from "../../components/common/Divider";
 function Row1() {
   return (
     <>
-      <div className="home">
+      <div className="home" >
         <div
           className="p-2 container"
           style={{ border: "none", height: "auto" }}
