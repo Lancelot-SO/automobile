@@ -2,6 +2,8 @@ import React from "react";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import './index.css'
 import CarImage from './CarImage'
+import Overview from './Overview'
+import EnginePerformance from './EnginePerformance'
 
 const Row2 = () => {
   const scrollToSection = (sectionId) => {
@@ -62,13 +64,11 @@ const Row2 = () => {
       </div>
 
       <div id="section2" className="section" style={{height: 'auto'}}>
-        <h4>Section 2 Content</h4>
-        <p>This is the content for Section 2.</p>
+      <Overview />
       </div>
 
       <div id="section3" className="section" style={{height: 'auto'}}>
-        <h4>Section 3 Content</h4>
-        <p>This is the content for Section 3.</p>
+       <EnginePerformance />
       </div>
     </div>
    </div>

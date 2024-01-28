@@ -13,7 +13,7 @@ import { ReactComponent as Check } from "../../../assets/svg/check.svg";
 function index() {
   return (
     <>
-      <div className="mt-2">
+      <div className="mt-2 mb-5">
         <Row>
           <Col xxl={8}>
             <div>
