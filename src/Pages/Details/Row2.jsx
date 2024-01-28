@@ -68,7 +68,7 @@ const Row2 = () => {
       </div>
 
       <div id="section3" className="section" style={{height: 'auto'}}>
-       <EnginePerformance />
+       {/* <EnginePerformance /> */}
       </div>
     </div>
    </div>
