@@ -11,6 +11,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsFuelPumpDiesel } from "react-icons/bs";
 import { MdElectricalServices } from "react-icons/md";
 import { FaTruckFast } from "react-icons/fa6";
+import {Card} from 'reactstrap'
 import {
   PiArrowCircleLeftLight,
   PiArrowCircleRightLight,
@@ -24,11 +25,11 @@ const Sli = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 3,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 2,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -227,18 +228,20 @@ const Sli = () => {
 
   return (
     <>
+    
+    
       <Carousel responsive={responsive}>
         <div>
-          <div className="car-card">
+          <div className="car-card"  >
             {cars.map((car) => {
               return (
-                <div className="container mt-5">
+                <div className=" mt-5">
 
-                  <div className="card" key={car.id}>
+                  <Card className="p-3" key={car.id} style={{boxShadow: 'none', border: '1px solid #eaeaea', height: "auto"}}>
 
-                    <div className="img-card">
+                    <div className="">
 
-                      <img src={car.img} alt="suv" />
+                      <img src={car.img} alt="suv" className="img-fluid mb-4" style={{borderRadius: '6px'}}/>
 
                       {/* <ImageSlider img={""}/> */}
 
@@ -283,7 +286,7 @@ const Sli = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Card>
                 </div>
               );
             })}
