@@ -16,8 +16,8 @@ function Accordion() {
       <UncontrolledAccordion
         defaultOpen={["1", "2"]}
         stayOpen
-        style={{ border: "1px solid transparent", borderRadius: "10px" }}
-        className="w-100"
+        style={{ border: "1px solid #eaeaea", borderRadius: "10px" }}
+        className="w-100 p-3"
       >
         <AccordionItem
           style={{ border: "none", borderRadius: "10px" }}

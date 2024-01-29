@@ -80,4 +80,36 @@
     border-color: #00d084  !important;
   }
   
+
+  .comment-title{
+display: none  !important;
+  }
   
+
+  .userImg{
+    display: none  !important;
+  }
+
+  .userIcon{
+    display: none !important;
+  }
+
+  .form{
+    background-color: transparent !important;
+  }
+
+
+  .postComment{
+    margin: 1rem !important;
+    border: 1px solid #00d084 !important;
+  }
+
+  .postBtn{
+    background-color: #00d084 !important;
+    border: none !important;
+    padding: 1rem !important;
+  }
+
+  .hr-style{
+    border: 1px solid white !important;
+  }
