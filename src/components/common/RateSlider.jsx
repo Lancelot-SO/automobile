@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from "reactstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { IoStar, IoStarHalf } from "react-icons/io5";
+import Marq from "./Marquee";
 
 const RateSlider = () => {
   const cars = [
@@ -150,63 +151,8 @@ const RateSlider = () => {
         </Col>
       </Row>
       <Row>
-      <marquee className="mt-5">
-        <div className="d-flex" style={{ justifyContent: "space-around" }}>
-          <div>
-            {" "}
-            <img
-              src={
-                "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/home1/company-logo-03.png"
-              }
-              alt="gogole"
-              className="mt-4"
-            ></img>
-          </div>
-          <div>
-            {" "}
-            <img
-              src={
-                "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/home1/company-logo-05.png"
-              }
-              alt="gogole"
-              className="mt-4"
-            ></img>
-          </div>
-          <div>
-            {" "}
-            <img
-              src={
-                "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/home1/company-logo-06.png"
-              }
-              alt="gogole"
-              className="mt-4"
-            ></img>
-          </div>
-          <div>
-            {" "}
-            <img
-              src={
-                "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/home1/company-logo-01.png"
-              }
-              alt="gogole"
-              className="mt-4"
-            ></img>
-          </div>
-          <div>
-            {" "}
-            <img
-              src={
-                "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/home1/company-logo-02.png"
-              }
-              alt="gogole"
-              className="mt-4"
-            ></img>
-          </div>
-        </div>
-      </marquee>
+       
       </Row>
-
-    
     </Container>
   );
 };

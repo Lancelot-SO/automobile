@@ -3,6 +3,7 @@ import Slider from "../../components/common/Slider";
 import { Container, Button, Row, Col, Card } from "reactstrap";
 import { IoStar, IoStarHalf } from "react-icons/io5";
 import RateSlider from "../../components/common/RateSlider";
+import Marq from "../../components/common/Marquee";
 
 function Row3() {
   return (
@@ -19,9 +20,16 @@ function Row3() {
           </div>
           <Row className="">
             <Col xxl={3} className="p-2">
-              <Card className="w-100" style={{ boxShadow: "none", background:
+              <Card
+                className="w-100"
+                style={{
+                  boxShadow: "none",
+                  background:
                     "linear-gradient(30deg, #ebd3d3, #e8edef, #a8dcbe, #becdd5)",
-                  borderRadius: "10px", border: "none" }} >
+                  borderRadius: "10px",
+                  border: "none",
+                }}
+              >
                 <h4 className="text-center fw-bolder mb-2">Excellent!</h4>
                 <div className="text-center">
                   <div className="five-stars">
@@ -88,7 +96,7 @@ function Row3() {
                     }
                     alt="gogole"
                   ></img>
-                   <div className="five-stars">
+                  <div className="five-stars">
                     <IoStar
                       style={{
                         color: "gold",
@@ -134,11 +142,16 @@ function Row3() {
             <Col xxl={9} className="">
               <div className="w-100" style={{ boxShadow: "none" }}>
                 <RateSlider />
+               
               </div>
             </Col>
           </Row>
+
+          <Marq />
         </Container>
+       
       </div>
+   
     </>
   );
 }

@@ -43,3 +43,29 @@
     padding: 0;
   }
 }
+
+
+/* YourComponent.css */
+.marquee-container {
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee-animation 20s linear infinite;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+@keyframes marquee-animation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-content img {
+  margin-right: 20px; /* Adjust the spacing between logos as needed */
+}
