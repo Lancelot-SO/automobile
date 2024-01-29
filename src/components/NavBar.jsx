@@ -10,13 +10,13 @@ import { BsSearch, BsHandbag } from "react-icons/bs";
 
 const LogoAndText = () => (
   <div className="navbar-logo">
-    <img src={logo} alt="logo" />
-    <div className="navbar-auto">
+    <img src={"https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/footer-logo.svg"} alt="logo" />
+    {/* <div className="navbar-auto">
       <div className="navbar-text">
         <h1 className="navbar-title">AutoMobile</h1>
         <p className="navbar-desc">Automotive car dealer</p>
       </div>
-    </div>
+    </div> */}
   </div>
 );
 

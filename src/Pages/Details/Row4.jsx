@@ -147,6 +147,15 @@ function Row3() {
             </Col>
           </Row>
 
+          <div>
+            <h5 className="text-start mt-5" style={{ color: "black" }}>
+              Our trusted partners
+            </h5>
+            {/* <h2 className="text-start fw-bolder">
+              What Our Customers Are Saying
+            </h2> */}
+          </div>
+
           <Marq />
         </Container>
        

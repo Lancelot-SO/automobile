@@ -6,6 +6,7 @@ import Details from './Pages/Details'
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./components/common/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </Router>
       {/* <Landing /> */}
+      <Footer />
     </div>
   );
 }
