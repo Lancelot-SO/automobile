@@ -2,7 +2,7 @@ import React from "react";
 import Table from "./Table";
 import Table2 from "../EnginePerformance/Table";
 import { Col, Row, Button } from "reactstrap";
-
+import ColorCirclesCarousel from "./ColorSide";
 
 function index() {
   return (
@@ -22,6 +22,8 @@ function index() {
               </h4>
             </div>
             <Table />
+
+            {/* Engine Performance */}
             <div>
               <div className="mt-5">
                 <h4>
@@ -36,6 +38,25 @@ function index() {
               </div>
 
               <Table2 />
+            </div>
+            {/* COlor */}
+            <div>
+              <div className="mt-5">
+                <h4>
+                  BMW M5 Competition Color
+                  <img
+                    src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
+                    alt="line"
+                    width="50"
+                    className="mx-2"
+                  ></img>
+                </h4>
+              </div>
+
+              {/* COlor Slider */}
+              <div>
+                <ColorCirclesCarousel />
+              </div>
             </div>
           </Col>
 
@@ -53,7 +74,11 @@ function index() {
             </div>
             <div>
               <div
-                style={{ border: "1px solid #f3f6f9", borderRadius: "10px", cursor: 'pointer' }}
+                style={{
+                  border: "1px solid #f3f6f9",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                }}
                 className="p-2 d-flex gap-4 align-items-center mt-4"
               >
                 <div style={{ position: "relative", display: "inline-block" }}>
@@ -113,7 +138,11 @@ function index() {
             </div>
             <div>
               <div
-                style={{ border: "1px solid #f3f6f9", borderRadius: "10px", cursor: 'pointer' }}
+                style={{
+                  border: "1px solid #f3f6f9",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                }}
                 className="p-2 d-flex gap-4 align-items-center mt-4"
               >
                 <div style={{ position: "relative", display: "inline-block" }}>
@@ -173,7 +202,11 @@ function index() {
             </div>
             <div>
               <div
-                style={{ border: "1px solid #f3f6f9", borderRadius: "10px", cursor: 'pointer' }}
+                style={{
+                  border: "1px solid #f3f6f9",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                }}
                 className="p-2 d-flex gap-4 align-items-center mt-4"
               >
                 <div style={{ position: "relative", display: "inline-block" }}>
@@ -233,7 +266,11 @@ function index() {
             </div>
             <div>
               <div
-                style={{ border: "1px solid #f3f6f9", borderRadius: "10px", cursor: 'pointer' }}
+                style={{
+                  border: "1px solid #f3f6f9",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                }}
                 className="p-2 d-flex gap-4 align-items-center mt-4"
               >
                 <div style={{ position: "relative", display: "inline-block" }}>
@@ -293,7 +330,11 @@ function index() {
             </div>
             <div>
               <div
-                style={{ border: "1px solid #f3f6f9", borderRadius: "10px", cursor: 'pointer' }}
+                style={{
+                  border: "1px solid #f3f6f9",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                }}
                 className="p-2 d-flex gap-4 align-items-center mt-4"
               >
                 <div style={{ position: "relative", display: "inline-block" }}>
@@ -351,7 +392,12 @@ function index() {
                 </div>
               </div>
             </div>
-            <Button style={{backgroundColor: "#00d084", border: 'none'}} className="text-dark btn btn-dark w-100 p-3">View All Car</Button>
+            <Button
+              style={{ backgroundColor: "#00d084", border: "none" }}
+              className="text-dark btn btn-dark w-100 p-3"
+            >
+              View All Car
+            </Button>
           </Col>
         </Row>
       </div>
