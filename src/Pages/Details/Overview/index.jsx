@@ -3,6 +3,7 @@ import Table from "./Table";
 import Table2 from "../EnginePerformance/Table";
 import { Col, Row, Button } from "reactstrap";
 import ColorCirclesCarousel from "./ColorSide";
+import MileageTable from "./MileageTable";
 
 function index() {
   return (
@@ -56,6 +57,26 @@ function index() {
               {/* COlor Slider */}
               <div>
                 <ColorCirclesCarousel />
+              </div>
+            </div>
+
+            {/* Mileage table */}
+            <div className="mt-5">
+              <div className="mt-5">
+                <h4>
+                  BMW M5 Competition Mileage
+                  <img
+                    src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
+                    alt="line"
+                    width="50"
+                    className="mx-2"
+                  ></img>
+                </h4>
+              </div>
+
+              {/* COlor Slider */}
+              <div>
+                <MileageTable />
               </div>
             </div>
           </Col>
