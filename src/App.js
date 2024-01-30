@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/common/Footer";
+import AboutUs from './Pages/AboutUs'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/details" element={<Details />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </Router>
       {/* <Landing /> */}
