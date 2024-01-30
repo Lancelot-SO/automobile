@@ -142,7 +142,6 @@ function Row3() {
             <Col xxl={9} className="">
               <div className="w-100" style={{ boxShadow: "none" }}>
                 <RateSlider />
-               
               </div>
             </Col>
           </Row>
@@ -158,9 +157,7 @@ function Row3() {
 
           <Marq />
         </Container>
-       
       </div>
-   
     </>
   );
 }
