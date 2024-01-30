@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import AboutUs from './Pages/AboutUs'
 import CustomerReview from './Pages/CustomerReview'
+import ReturnExchange from './Pages/ReturnExchange'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/details" element={<Details />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/customer-review" element={<CustomerReview />} />
+          <Route path="/return-exchange" element={<ReturnExchange />} />
         </Routes>
       </Router>
       {/* <Landing /> */}
