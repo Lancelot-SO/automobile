@@ -4,7 +4,8 @@ import "./App.css";
 import Landing from "./Pages/Landing";
 import Details from './Pages/Details'
 import NavBar from "./components/NavBar";
-import "bootstrap/dist/css/bootstrap.css";
+// Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import AboutUs from './Pages/AboutUs'

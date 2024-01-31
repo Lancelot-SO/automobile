@@ -11,14 +11,16 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsFuelPumpDiesel } from "react-icons/bs";
 import { MdElectricalServices } from "react-icons/md";
 import { FaTruckFast } from "react-icons/fa6";
-import {Card} from 'reactstrap'
+import { Card } from "reactstrap";
 import {
   PiArrowCircleLeftLight,
   PiArrowCircleRightLight,
 } from "react-icons/pi";
 
+
 import "react-multi-carousel/lib/styles.css";
 import ImageSlider from "./ImageSlider";
+import { useState } from "react";
 
 const Sli = () => {
   const responsive = {
@@ -40,6 +42,10 @@ const Sli = () => {
       items: 1,
     },
   };
+
+
+ 
+
 
   const cars = [
     {
@@ -163,7 +169,6 @@ const Sli = () => {
       electricity: "electricity",
     },
 
-
     {
       id: 4,
       img: lambo,
@@ -228,24 +233,34 @@ const Sli = () => {
 
   return (
     <>
-    
-    
       <Carousel responsive={responsive}>
         <div>
-          <div className="car-card"  >
+          <div className="car-card">
             {cars.map((car) => {
               return (
                 <div className=" mt-5">
-
-                  <Card className="p-3" key={car.id} style={{boxShadow: 'none', border: '1px solid #eaeaea', height: "auto"}}>
-
+                  <Card
+                    className="p-3"
+                    key={car.id}
+                    style={{
+                      boxShadow: "none",
+                      border: "1px solid #eaeaea",
+                      height: "535px",
+                    }}
+                  >
                     <div className="">
-
-                      <img src={car.img} alt="suv" className="img-fluid mb-4" style={{borderRadius: '6px'}}/>
+                      <img
+                        src={car.img}
+                        alt="suv"
+                        className="img-fluid mb-4"
+                        style={{ borderRadius: "6px" }}
+                      />
 
                       {/* <ImageSlider img={""}/> */}
 
-                      <span className="ten-collections">{car.collection} 10</span>
+                      <span className="ten-collections">
+                        {car.collection} 10
+                      </span>
                       <span className="heart">{car.heart}</span>
                       <span className="right-arrow">{car.right}</span>
 
@@ -253,9 +268,54 @@ const Sli = () => {
                         <span className="left-arrow">{car.left}</span>
                       </div>
                     </div>
+
+                    <div className="text-center  mb-3">
+                      <div className="w-100 d-flex gap-1 mt-2 text-center justify-content-center align-items-center">
+                        {" "}
+                        <div
+                          className="fw-lighter fs-5 p-2"
+                          style={{
+                            backgroundColor: "#e5e6ec",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          00D
+                        </div>
+                        <div className="fs-5 p-2 fw-lighter">:</div>
+                        <div
+                          className="fw-lighter fs-5 p-2"
+                          style={{
+                            backgroundColor: "#e5e6ec",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          00H
+                        </div>
+                        <div className="fs-5 p-2 fw-lighter">:</div>
+                        <div
+                          className="fw-lighter fs-5 p-2"
+                          style={{
+                            backgroundColor: "#e5e6ec",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          00M
+                        </div>
+                        <div className="fs-5 p-2 fw-lighter">:</div>
+                        <div
+                          className="fw-lighter fs-5 p-2"
+                          style={{
+                            backgroundColor: "#e5e6ec",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          00S
+                        </div>
+                      </div>
+                    </div>
                     <div className="main-details">
                       <div className="details">
-                        <h4>{car.name}</h4>
+                        <h4 className="fw-bolder">{car.name}</h4>
                         <div className="price-location">
                           <span className="price">${car.price}</span>
                           <span className="location">
@@ -275,14 +335,11 @@ const Sli = () => {
                             {car.plug} {car.electricity}
                           </span>
                         </div>
-                        <div className="border"></div>
-                        <div className="views">
-                          <div className="view-more">
-                            <span className="icon">{car.truck}</span>
-                            <span>
-                              <b>{car.view}</b>
-                            </span>
-                          </div>
+                        <hr style={{ border: "1px solid #dbdbdb" }} />
+
+                        <div className="d-flex" style={{ cursor: "pointer" }}>
+                          <span className="icon">{car.truck}</span>{" "}
+                          <span className="fw-bolder">View Details</span>
                         </div>
                       </div>
                     </div>
@@ -295,13 +352,13 @@ const Sli = () => {
 
         {/* DO not remove */}
         {/* IT shawdows the number of cars available for the arrows */}
-        {
-          cars.map((a) => {
-            return <div></div>
-          })
-        }
-
+        {cars.map((a) => {
+          return <div></div>;
+        })}
       </Carousel>
+
+
+      
     </>
   );
 };

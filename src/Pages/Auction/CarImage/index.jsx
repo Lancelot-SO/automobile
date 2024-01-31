@@ -1,5 +1,5 @@
-import React from "react";
-import { Col, Row } from "reactstrap";
+import React, { useState } from "react";
+import { Col, Row, Input } from "reactstrap";
 import ImageSlider from "./Slider";
 import { Button } from "reactstrap";
 import { ReactComponent as Panelleft } from "../../../assets/svg/panelLeft.svg";
@@ -9,8 +9,15 @@ import { ReactComponent as Interior } from "../../../assets/svg/interior.svg";
 import { ReactComponent as Exterior } from "../../../assets/svg/exterior.svg";
 import { ReactComponent as Colors } from "../../../assets/svg/colors.svg";
 import { ReactComponent as Check } from "../../../assets/svg/check.svg";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-function index() {
+function Index() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <>
       <div className="mt-2 mb-5">
@@ -206,7 +213,6 @@ function index() {
                     <Check className="mx-2" />
                     Premium Seat Material
                   </div>
-                  
                 </div>
                 <div>
                   <div className="mt-2">
@@ -225,39 +231,169 @@ function index() {
                     <Check className="mx-2" />
                     Multi-Zone Climate Control
                   </div>
-                  
                 </div>
               </div>
             </div>
           </Col>
           <Col xxl={4}>
-            <div
-              className="w-100 d-grid gap-2 mt-5 p-4"
-              style={{ border: "1px dashed #e0e0e0", borderRadius: "10px" }}
-            >
+            <div className="w-100 d-flex gap-1 mt-5 text-center justify-content-center align-items-center">
               {" "}
-              <Button
-                className="btn btn-dark text-dark w-100 p-3 fw-bolder"
-                style={{ backgroundColor: "#00d084", border: "none" }}
+              <div
+                className="fw-bolder fs-5 p-3"
+                style={{ backgroundColor: "#e5e6ec", borderRadius: "10px" }}
               >
-                Show Number
-              </Button>
+                00D
+              </div>
+              <div className="fs-5 p-3 fw-bolder">:</div>
+              <div
+                className="fw-bolder fs-5 p-3"
+                style={{ backgroundColor: "#e5e6ec", borderRadius: "10px" }}
+              >
+                00H
+              </div>
+              <div className="fs-5 p-3 fw-bolder">:</div>
+              <div
+                className="fw-bolder fs-5 p-3"
+                style={{ backgroundColor: "#e5e6ec", borderRadius: "10px" }}
+              >
+                00M
+              </div>
+              <div className="fs-5 p-3 fw-bolder">:</div>
+              <div
+                className="fw-bolder fs-5 p-3"
+                style={{ backgroundColor: "#e5e6ec", borderRadius: "10px" }}
+              >
+                00S
+              </div>
+            </div>
+
+            <div className="mt-3">
+              <div>
+                <div
+                  className="d-flex"
+                  style={{ justifyContent: "space-between" }}
+                >
+                  <div className="mt-3 fw-bolder">Starting Bids</div>
+                  <div>
+                    <img
+                      src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
+                      alt="line"
+                      width="50"
+                      className="mx-2"
+                    ></img>
+                  </div>
+                  <div className="mt-3">GHC 23,323.000</div>
+                </div>
+                <div
+                  className="d-flex"
+                  style={{ justifyContent: "space-between" }}
+                >
+                  <div className="mt-3 fw-bolder">Total Bids</div>
+                  <div>
+                    <img
+                      src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
+                      alt="line"
+                      width="50"
+                      className="mx-2"
+                    ></img>
+                  </div>
+                  <div className="mt-3">10 Person</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4">
               <Button
-                className="btn btn-dark text-dark w-100 p-3 fw-bolder"
                 style={{
-                  backgroundColor: "#fafafa",
-                  border: "1px solid #e0e0e0",
+                  backgroundColor: "#00d084",
+                  border: "none",
+                  color: "black",
                 }}
+                className="w-100 p-3 fw-bolder"
+                onClick={toggleModal}
               >
-                Email Now
-              </Button>
-              <Button
-                className="btn btn-dark text-dark w-100 p-3 fw-bolder"
-                style={{ backgroundColor: "#00d084", border: "none" }}
-              >
-                Whatsapp
+                Place Bids
               </Button>
             </div>
+
+            <Modal isOpen={modalOpen} toggle={toggleModal}>
+              <ModalHeader toggle={toggleModal} style={{ border: "none" }} className="mt-4">
+                Now, Your Bidding Time
+              </ModalHeader>
+              <ModalBody>
+                <div>
+                  <label>Your Bidding Amount*</label>
+                  <input
+                    type="email"
+                    className="form-control p-3"
+                    id="exampleFormControlInput1"
+                    placeholder="Amounts"
+                  />
+                </div>
+
+                <div className="fw-bolder fs-5 mt-5">Your Personal Info</div>
+
+                <div className="mt-3">
+                  <label className="fw-lighter">Full Name*</label>
+                  <input
+                    type="email"
+                    className="form-control p-3"
+                    id="exampleFormControlInput1"
+                    placeholder="Amounts"
+                  />
+                </div>
+
+                <Row className="mt-1">
+                  <Col xxl={6}>
+                    <div className="mt-3">
+                      <label className="fw-lighter">Phone Number*</label>
+                      <input
+                        type="email"
+                        className="form-control p-3"
+                        id="exampleFormControlInput1"
+                        placeholder="Phone Number"
+                      />
+                    </div>
+                  </Col>
+                  <Col xxl={6}>
+                    <div className="mt-3">
+                      <label className="fw-lighter">Email*</label>
+                      <input
+                        type="email"
+                        className="form-control p-3"
+                        id="exampleFormControlInput1"
+                        placeholder="Email"
+                      />
+                    </div>
+                  </Col>
+                </Row>
+
+                <div className="mt-2">
+                  <label for="biddingAmount" className="fw-lighter">
+                    Your Bidding Amount*
+                  </label>
+                  <Input
+                    type="textarea"
+                    name="biddingAmount"
+                    id="biddingAmount"
+                  />
+                </div>
+              </ModalBody>
+              <div className="mx-3">
+                <Button
+                  style={{
+                    backgroundColor: "#00d084",
+                    border: "none",
+                    color: "black",
+                  }}
+                  className="w-100 p-3 fw-bolder"
+                  onClick={toggleModal}
+                >
+                  Place Bids
+                </Button>
+              </div>
+              <ModalFooter style={{ border: "none" }}></ModalFooter>
+            </Modal>
 
             <div className="mt-4">
               <div
@@ -349,4 +485,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
