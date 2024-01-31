@@ -23,7 +23,7 @@ function Row1() {
                 <div className="d-flex gap-3">
                   <div>
                     <h1 className=" fs-5" style={{ color: "#00d084" }}>
-                      Return & Exchange Policy
+                    Compare Cars
                     </h1>
                   </div>
                 </div>
@@ -32,7 +32,7 @@ function Row1() {
                   className="fw-bolder "
                   style={{ fontSize: "4rem", width: "max-content" }}
                 >
-                  Return & Exchange
+                 Find The Best Car
                 </h1>
                 <div className="pilot">
                   <div className="pilot-left">
