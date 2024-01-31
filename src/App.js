@@ -10,6 +10,7 @@ import Footer from "./components/common/Footer";
 import AboutUs from './Pages/AboutUs'
 import CustomerReview from './Pages/CustomerReview'
 import ReturnExchange from './Pages/ReturnExchange'
+import AuctionDetails from './Pages/Auction'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/customer-review" element={<CustomerReview />} />
           <Route path="/return-exchange" element={<ReturnExchange />} />
+          <Route path="/auction-details" element={<AuctionDetails />} />
         </Routes>
       </Router>
       {/* <Landing /> */}
