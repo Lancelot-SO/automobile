@@ -1,5 +1,12 @@
 import React from "react";
 import { Nav, NavItem, NavLink } from "reactstrap";
+import Summary from './Tables/Summary'
+import Engine from './Tables/Engine'
+import Performance from "./Tables/Performance";
+import Comfort from "./Tables/Comfort";
+import Safety from "./Tables/Safety";
+import ColorCirclesCarousel from "./Colors";
+import Band from '../../components/common/Band'
 // import "./index.css";
 
 const Row3 = () => {
@@ -55,15 +62,19 @@ const Row3 = () => {
         </Nav>
 
         <div id="section1" className="section" style={{ height: "auto" }}>
-          
+          <Summary />
         </div>
 
         <div id="section2" className="section" style={{ height: "auto" }}>
-          
+          <Engine />
+          <Performance />
+          <Comfort />
         </div>
 
         <div id="section3" className="section" style={{ height: "auto" }}>
-         
+         <Safety />
+         <ColorCirclesCarousel />
+         <Band />
         </div>
       </div>
     </div>
