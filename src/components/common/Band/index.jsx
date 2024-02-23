@@ -4,13 +4,21 @@ import Slider from "./Slider";
 import CarsList from "./CarsList";
 import Feedback from "./Feedback";
 
-function Index() {
+function Index({ minimal }) {
   return (
     <>
-      <FAQ />
-      <Slider />
-      <CarsList />
-      <Feedback />
+      <div style={{display: minimal === true ? 'none': '' }}>
+        <FAQ />
+      </div>
+      <div style={{display: minimal === true ? 'none': '' }}>
+        <Slider />
+      </div>
+      <div style={{display: minimal === true ? 'none': '' }}>
+        <CarsList />
+      </div>
+      <div>
+        <Feedback />
+      </div>
     </>
   );
 }

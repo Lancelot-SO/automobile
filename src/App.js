@@ -13,6 +13,7 @@ import CustomerReview from './Pages/CustomerReview'
 import ReturnExchange from './Pages/ReturnExchange'
 import AuctionDetails from './Pages/Auction'
 import Compare from './Pages/Compare'
+import Shop from './Pages/Shop'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/return-exchange" element={<ReturnExchange />} />
           <Route path="/auction-details" element={<AuctionDetails />} />
           <Route path="/compare" element={<Compare />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </Router>
       {/* <Landing /> */}
