@@ -10,7 +10,12 @@ import { BsSearch, BsHandbag } from "react-icons/bs";
 
 const LogoAndText = () => (
   <div className="navbar-logo">
-    <img src={"https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/footer-logo.svg"} alt="logo" />
+    <img
+      src={
+        "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/footer-logo.svg"
+      }
+      alt="logo"
+    />
     {/* <div className="navbar-auto">
       <div className="navbar-text">
         <h1 className="navbar-title">AutoMobile</h1>
@@ -47,9 +52,14 @@ const NavBar = () => {
 
   return (
     <header>
-      <nav className="px-md-5">
+      <nav className="px-md-5 " style={{ borderBottom: "1px solid #e0e0e0" }}>
         <div className="navbar-row px-md-5">
-          <LogoAndText />
+          <div className="text-start">
+            <img
+              src="https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/logo.svg"
+              alt="4"
+            ></img>
+          </div>
 
           <div className="bars">
             <div onClick={() => setNav(!nav)} className="design-bars">
@@ -63,7 +73,12 @@ const NavBar = () => {
             {nav && (
               <section className="">
                 <div className="">
-                  <LogoAndText />
+                  <div className="text-start">
+                    <img
+                      src="https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/logo.svg"
+                      alt="4"
+                    ></img>
+                  </div>
 
                   <div className="">
                     <ul className="">
@@ -147,27 +162,24 @@ const NavBar = () => {
                   </div>
 
                   <div className="side-contact">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="currentColor"
-                      className="bi bi-envelope-open"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2" />
-                    </svg>
-                    <div className="side-inquiry">
-                      <span className="side-more">To More Inquiry</span>
-                      <span className="side-number">+556 318 804</span>
-                    </div>
+                    <img
+                      src="https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/logo.svg"
+                      alt="4"
+                    ></img>
                   </div>
                 </div>
               </section>
             )}
           </div>
 
-          <div className="search">
+          {/* <div className="text-start" style={{position: 'relative', left: '-18rem'}}>
+            <img
+              src="https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/logo.svg"
+              alt="4"
+            ></img>
+          </div> */}
+
+          <div className="search mt-2 mb-3 text-start w-50">
             <input name="search" placeholder="Search car names or brand" />
             <button className="btn">
               <BsSearch />
@@ -178,18 +190,22 @@ const NavBar = () => {
             className="d-flex gap-3"
             style={{ justifyContent: "space-evenly" }}
           >
-            <div className="mt-2 mx-2">
+            <div className="mt-1 mx-3">
               <IoMdPricetags style={{ color: "#00d084" }} />
               SELL WITH US
             </div>
-            <div className="mt-2 mx-2">
+            <div className="mt-1 mx-3">
               <IoMdHeartEmpty style={{ color: "#00d084" }} />
               SAVE
             </div>
             <div>
               <Button
                 className="btn btn-dark w-100"
-                style={{ borderRadius: "4px", backgroundColor: "#00d084" }}
+                style={{
+                  borderRadius: "4px",
+                  backgroundColor: "#00d084",
+                  border: "none",
+                }}
               >
                 <RiAccountCircleLine style={{ color: "white" }} />
                 SIGN UP

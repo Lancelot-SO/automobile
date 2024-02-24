@@ -16,6 +16,7 @@ import Compare from './Pages/Compare'
 import Shop from './Pages/Shop'
 import ShopDetails from './Pages/Shop/Details'
 import ShopCheckout from './Pages/Checkout'
+import BrandCategory from './Pages/BrandCategory'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop-details" element={<ShopDetails />} />
           <Route path="/shop-checkout" element={<ShopCheckout />} />
+          <Route path="/brand-category" element={<BrandCategory />} />
         </Routes>
       </Router>
       {/* <Landing /> */}
