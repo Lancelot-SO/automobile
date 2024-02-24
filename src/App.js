@@ -14,6 +14,7 @@ import ReturnExchange from './Pages/ReturnExchange'
 import AuctionDetails from './Pages/Auction'
 import Compare from './Pages/Compare'
 import Shop from './Pages/Shop'
+import ShopDetails from './Pages/Shop/Details'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/auction-details" element={<AuctionDetails />} />
           <Route path="/compare" element={<Compare />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop-details" element={<ShopDetails />} />
         </Routes>
       </Router>
       {/* <Landing /> */}

@@ -4,12 +4,12 @@ import { Col, Row } from "reactstrap";
 import Accordion from "./Accordion";
 import Comments from "./Comments";
 
-function Index() {
+function Index({ minimal }) {
   return (
     <>
       <div>
         <div className="mt-5">
-          <h4>
+          <h4 style={{display: minimal === true ? "none" : ''}}>
             FAQ’s & Latest Answer
             <img
               src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
@@ -23,11 +23,13 @@ function Index() {
         <div className="p-3">
           <Row>
             <Col xxl={8}>
-              <Accordion />
+              <div style={{ display: minimal === true ? "none" : "" }}>
+                <Accordion />
+              </div>
 
               <div className="mt-5">
                 <h4>
-                Latest User Question
+                  {minimal === true ? "Review" : "Latest User Question"}
                   <img
                     src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
                     alt="line"
