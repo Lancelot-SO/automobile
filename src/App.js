@@ -17,6 +17,7 @@ import Shop from './Pages/Shop'
 import ShopDetails from './Pages/Shop/Details'
 import ShopCheckout from './Pages/Checkout'
 import BrandCategory from './Pages/BrandCategory'
+import SingleBrand from './Pages/SingleBrandCategory'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/shop-details" element={<ShopDetails />} />
           <Route path="/shop-checkout" element={<ShopCheckout />} />
           <Route path="/brand-category" element={<BrandCategory />} />
+          <Route path="/single-brand" element={<SingleBrand />} />
         </Routes>
       </Router>
       {/* <Landing /> */}

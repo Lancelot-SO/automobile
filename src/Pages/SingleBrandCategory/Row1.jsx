@@ -20,7 +20,7 @@ function Row1() {
                 <div className="d-flex gap-3">
                   <div>
                     <h1 className=" fs-5" style={{ color: "#00d084" }}>
-                      Brand Category
+                      Suzuki Brand
                     </h1>
                   </div>
                 </div>
@@ -29,7 +29,7 @@ function Row1() {
                   className="fw-bolder "
                   style={{ fontSize: "4rem", width: "max-content" }}
                 >
-                  Find the Best Car
+                  To Choose Suzuki car
                 </h1>
                 <div className="pilot">
                   <div className="pilot-left">
@@ -194,7 +194,7 @@ function Row1() {
               </Col>
               <Col md={3} sm={6} xs={12}>
                 <FormGroup>
-                  <Label for="parts">Select Parts*</Label>
+                  <Label for="parts">Select Budget*</Label>
                   <Input type="select" name="parts" id="parts">
                     {/* Add options for parts */}
                     <option>GHC 100,000 - 400,000</option>
