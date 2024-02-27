@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../assets/car-logo.png";
 // import Modal from "./Modal";
@@ -10,6 +10,8 @@ import { BsSearch, BsHandbag } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   Navbar,
   NavbarBrand,
@@ -33,7 +35,14 @@ import {
 import { Container } from "reactstrap";
 import { FaFacebookF } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io5";
-import {toast} from 'react-hot-toast'
+import { toast } from "react-hot-toast";
+import { FaPowerOff } from "react-icons/fa6";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
 const LogoAndText = () => (
   <div className="navbar-logo">
@@ -61,6 +70,14 @@ const VerticalDivider = () => {
 };
 
 const NavBar = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
+
   const [nav, setNav] = useState(false);
   const [showModal, setShowModal] = useState(true);
 
@@ -87,6 +104,14 @@ const NavBar = () => {
   const toggleSellWithUsModal = () => setSellWithUsModal(!setllWithUsModal);
 
   const [loading, setLoading] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [account, setAccount] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    confirm: "",
+  });
 
   const validation = useFormik({
     enableReinitialize: true,
@@ -108,21 +133,37 @@ const NavBar = () => {
 
     onSubmit: (values) => {
       console.log("balues");
-      setLoading(true)
+      setLoading(true);
       setTimeout(() => {
         setLoading(false);
         validation.resetForm();
-        toast.success('Sign Up Successfully')
-        toggle()
+        toast.success("Sign Up Successfully");
+        setLoggedIn(true);
+        setAccount({
+          first_name: values.first_name,
+          last_name: values.last_name,
+          email: values.email,
+        });
+        toggle();
       }, 4000);
-   
     },
-
-
   });
+
+  const [isLoginModal, setIsLoginModal] = useState(false);
+
+  const toggleLoginModal = () => {
+    setIsLoginModal(!isLoginModal);
+  };
+
+  const handleItemClick = (item) => {
+    console.log(`Clicked on ${item}`);
+    // Add your logic for handling item click here
+  };
 
   return (
     <>
+      {/* Dropdown modal  */}
+
       <header>
         <nav className="px-md-5 " style={{ borderBottom: "1px solid #e0e0e0" }}>
           <div className="navbar-row px-md-5">
@@ -279,31 +320,107 @@ const NavBar = () => {
               </button>
             </div>
 
-            <div
-              className="d-flex gap-3"
-              style={{ justifyContent: "space-evenly" }}
-            >
-              <div className="mt-1 mx-3" onClick={toggleSellWithUsModal}>
-                <IoMdPricetags style={{ color: "#00d084" }} />
-                SELL WITH US
+            <div className="d-flex gap-3 align-items-center justify-content-evenly">
+              <div
+                className="mt-1 mx-3 d-flex align-items-center justify-content-evenly"
+                onClick={toggleSellWithUsModal}
+                style={{ width: "max-content" }}
+              >
+                <div>
+                  <IoMdPricetags
+                    style={{ color: "#00d084" }}
+                    className="mx-2"
+                  />
+                </div>
+                <div>SELL WITH US</div>
               </div>
-              <div className="mt-1 mx-3">
+              <div className=" align-items-center justify-content-evenly mx-3 d-flex">
                 <IoMdHeartEmpty style={{ color: "#00d084" }} />
                 SAVE
               </div>
               <div>
                 <Button
-                  className="btn btn-dark w-100"
+                  className="btn btn-dark d-flex align-items-center justify-content-evenly"
                   style={{
                     borderRadius: "4px",
                     backgroundColor: "#00d084",
                     border: "none",
+                    width: "max-content",
                   }}
-                  onClick={toggle}
+                  onClick={() => {
+                    if (loggedIn) {
+                      toggleLoginModal();
+                    } else {
+                      toggle();
+                    }
+                  }}
                 >
-                  <RiAccountCircleLine style={{ color: "white" }} />
-                  SIGN UP
+                  <div>
+                    <RiAccountCircleLine style={{ color: "white" }} />
+                  </div>
+                  <div>{loggedIn ? account?.first_name : "SIGN UP"}</div>
                 </Button>
+                <Dropdown
+                  isOpen={isLoginModal}
+                  toggle={toggleLoginModal}
+                  className="mt-2"
+                >
+                  {/* <DropdownToggle caret>Menu</DropdownToggle> */}
+                  <DropdownMenu
+                    style={{
+                      borderRadius: "10px",
+                      border: "1px solid #e0e0e0",
+                      boxShadow: "2px 2px 10px 4px #def9ef",
+                    }}
+                    data-aos="fade-up"
+                  >
+                    <div className="p-4">
+                      <div
+                        style={{ fontSize: "0.8rem" }}
+                        className="text-center mb-4"
+                      >
+                        Welcome! {account?.first_name}
+                      </div>
+                      <div>
+                        <hr style={{ border: "1px solid #e0e0e0" }} />
+                      </div>
+                      <div className="text-center align-items-center d-flex">
+                        <Button
+                          style={{
+                            backgroundColor: "#00d084 ",
+                            width: "max-content",
+                            borderRadius: "5px",
+                          }}
+                          onClick={() => {
+                            setLoggedIn(false);
+                            setLoading(true);
+                            setTimeout(() => {
+                              setLoading(false);
+                              setAccount({});
+                              toast.success("Logged Out Successfully");
+                              toggleLoginModal();
+                            }, 4000);
+                          }}
+                          className=" align-items-center d-flex"
+                        >
+                          {loading ? (
+                            <div>
+                              <Spinner size={"sm"} className="mx-2" />
+                            </div>
+                          ) : (
+                            <div>
+                              <FaPowerOff
+                                style={{ color: "white" }}
+                                className="mx-2"
+                              />
+                            </div>
+                          )}
+                          <div> Logout</div>
+                        </Button>
+                      </div>
+                    </div>
+                  </DropdownMenu>
+                </Dropdown>
               </div>
             </div>
 
