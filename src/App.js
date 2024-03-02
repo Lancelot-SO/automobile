@@ -23,7 +23,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 
 function App() {
- 
   return (
     <div className="App">
       <NavBar />
@@ -45,7 +44,7 @@ function App() {
       </Router>
       {/* <Landing /> */}
       <Footer />
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="bottom-right" reverseOrder={false} />
     </div>
   );
 }

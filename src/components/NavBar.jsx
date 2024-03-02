@@ -12,6 +12,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import img from "./img.png";
 import {
   Navbar,
   NavbarBrand,
@@ -149,10 +150,52 @@ const NavBar = () => {
     },
   });
 
+  const sellValidation = useFormik({
+    enableReinitialize: true,
+
+    initialValues: {
+      first_name: "",
+      phone: "",
+      email: "",
+      location: "",
+      carBrandName: "",
+      model: "",
+      regYear: "",
+      mileage: "",
+      fuelType: "",
+      sellingPrice: "",
+      note: "",
+    },
+    validationSchema: Yup.object({
+      first_name: Yup.string().required("Please provide first name"),
+      phone: Yup.string().required("Please provide phone"),
+      location: Yup.string().required("Please provide location"),
+      carBrandName: Yup.string().required("Please provide car brand name"),
+      model: Yup.string().required("Please provide car model"),
+      regYear: Yup.string().required("Please provide registration year"),
+      mileage: Yup.string().required("Please provide mileage"),
+      fuelType: Yup.string().required("Please provide fuel type"),
+      sellingPrice: Yup.string().required("Please provide selling price"),
+      // note: Yup.string().required("Please provide note"),
+    }),
+
+    onSubmit: (values) => {
+      toast.success("Information Submitted");
+      toggleSellWithUsModal();
+      sellValidation.resetForm();
+    },
+  });
+
   const [isLoginModal, setIsLoginModal] = useState(false);
 
   const toggleLoginModal = () => {
     setIsLoginModal(!isLoginModal);
+  };
+
+  const [isCartModal, setIsCartModal] = useState(false);
+
+  const toggleCartModal = () => {
+    setIsCartModal(!isCartModal);
   };
 
   const handleItemClick = (item) => {
@@ -423,16 +466,6 @@ const NavBar = () => {
                 </Dropdown>
               </div>
             </div>
-
-            <div className="new-cart">
-              <div className="cart-top">
-                <BsHandbag className="top-hand-bag" />
-                <div className="cart-numb">
-                  <span>Cart</span>
-                  <span>(3)</span>
-                </div>
-              </div>
-            </div>
           </div>
         </nav>
 
@@ -456,14 +489,226 @@ const NavBar = () => {
                   <li>CONTACT US</li>
                 </ul>
               </div>
-              <div className="right-side">
-                <div className="cart">
+
+              <div className="right-side" style={{ cursor: "pointer" }}>
+                <Dropdown
+                  isOpen={isCartModal}
+                  toggle={toggleCartModal}
+                  className="mt-5"
+                >
+                  <DropdownMenu
+                    style={{
+                      borderRadius: "10px",
+                      border: "1px solid #e0e0e0",
+                      boxShadow: "2px 2px 10px 4px #def9ef",
+                    }}
+                    data-aos="fade-up"
+                  >
+                    <div className="p-2">
+                      <div className="">
+                        <div className="d-flex mt-3 align-items-center justify-content">
+                          <div className="fw-bolder">
+                            <img src={img} alt="img"></img>
+                          </div>
+                          <div className="fw-lighter mt-3">
+                            <div className="fw-bolder d-flex justify-content-between">
+                              <div>GHC 214.00</div>
+                            </div>
+                            <div>Steering Rack Advance Auto Parts.</div>
+                            <div
+                              className="d-flex gap-2"
+                              style={{ height: "40px" }}
+                            >
+                              <Button
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  color: "black",
+                                  border: "none",
+                                }}
+                              >
+                                <p className="fw-bolder">-</p>
+                              </Button>
+                              <div
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  borderRadius: "10px",
+                                }}
+                                className="fw-bolder p-2 px-3"
+                              >
+                                01
+                              </div>
+                              <Button
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  color: "black",
+                                  border: "none",
+                                }}
+                              >
+                                <p className="fw-bolder">+</p>
+                              </Button>
+                            </div>
+                          </div>
+                          <div className="mx-5" style={{ color: "red" }}>
+                            X
+                          </div>
+                        </div>
+                        <div className="d-flex mt-3 align-items-center justify-content">
+                          <div className="fw-bolder">
+                            <img src={img} alt="img"></img>
+                          </div>
+                          <div className="fw-lighter mt-3">
+                            <div className="fw-bolder d-flex justify-content-between">
+                              <div>GHC 214.00</div>
+                            </div>
+                            <div>Steering Rack Advance Auto Parts.</div>
+                            <div
+                              className="d-flex gap-2"
+                              style={{ height: "40px" }}
+                            >
+                              <Button
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  color: "black",
+                                  border: "none",
+                                }}
+                              >
+                                <p className="fw-bolder">-</p>
+                              </Button>
+                              <div
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  borderRadius: "10px",
+                                }}
+                                className="fw-bolder p-2 px-3"
+                              >
+                                01
+                              </div>
+                              <Button
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  color: "black",
+                                  border: "none",
+                                }}
+                              >
+                                <p className="fw-bolder">+</p>
+                              </Button>
+                            </div>
+                          </div>
+                          <div className="mx-5" style={{ color: "red" }}>
+                            X
+                          </div>
+                        </div>
+                        <div className="d-flex mt-3 align-items-center justify-content">
+                          <div className="fw-bolder">
+                            <img src={img} alt="img"></img>
+                          </div>
+                          <div className="fw-lighter mt-3">
+                            <div className="fw-bolder d-flex justify-content-between">
+                              <div>GHC 214.00</div>
+                            </div>
+                            <div>Steering Rack Advance Auto Parts.</div>
+                            <div
+                              className="d-flex gap-2"
+                              style={{ height: "40px" }}
+                            >
+                              <Button
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  color: "black",
+                                  border: "none",
+                                }}
+                              >
+                                <p className="fw-bolder">-</p>
+                              </Button>
+                              <div
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  borderRadius: "10px",
+                                }}
+                                className="fw-bolder p-2 px-3"
+                              >
+                                01
+                              </div>
+                              <Button
+                                style={{
+                                  backgroundColor: "#f3f3f3",
+                                  color: "black",
+                                  border: "none",
+                                }}
+                              >
+                                <p className="fw-bolder">+</p>
+                              </Button>
+                            </div>
+                          </div>
+                          <div className="mx-5" style={{ color: "red" }}>
+                            X
+                          </div>
+                        </div>
+
+                        <div className="mt-3">
+                          <hr style={{ border: "1px solid #c9d1ce" }} />
+                        </div>
+
+                        <div>
+                          <table className="">
+                            <tbody>
+                              <tr>
+                                <td className="fw-bolder">Sub Total</td>
+                                <td className="left w-100 text-end">GHC 468</td>
+                              </tr>
+                              <tr>
+                                <td className="fw-bolder">Offer (20%)</td>
+                                <td className="left w-100 text-end">GHC 100</td>
+                              </tr>
+                              <tr>
+                                <td className="fw-bolder">Total</td>
+                                <td className="left w-100 text-end">GHC 568</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div className="mt-3">
+                          <Button
+                            className="w-100 p-3 fw-bolder"
+                            style={{
+                              backgroundColor: "black",
+                              color: "white",
+                              border: "none",
+                            }}
+                          >
+                            Continue Shopping
+                          </Button>
+                        </div>
+                        <div className="mt-3">
+                          <Button
+                            className="w-100 p-3 fw-bolder"
+                            style={{
+                              backgroundColor: "#00d084",
+                              color: "black",
+                              border: "none",
+                            }}
+                          >
+                            Poroduct Checkout
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </DropdownMenu>
+                </Dropdown>
+                <div
+                  className="cart"
+                  onClick={() => {
+                    toggleCartModal();
+                  }}
+                >
                   <BsHandbag className="hand-bag" />
                   <div className="cart-numb">
                     <span>Cart</span>
                     <span>(3)</span>
                   </div>
                 </div>
+
                 <div className="contact">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -605,7 +850,7 @@ const NavBar = () => {
                     <Col md={6} sm={6} xs={12}>
                       <lable>Password*</lable>
                       <Input
-                        type="text"
+                        type="password"
                         name="password"
                         id="password"
                         className="form-control p-3"
@@ -633,7 +878,7 @@ const NavBar = () => {
                     <Col md={6} sm={6} xs={12}>
                       <lable>Confirm Password*</lable>
                       <Input
-                        type="text"
+                        type="password"
                         name="confirm"
                         id="confirm"
                         className="form-control p-3"
@@ -746,45 +991,130 @@ const NavBar = () => {
                 <hr style={{ border: "1px solid #e0e0e0" }} />
               </div>
               <div>
-                <form>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    sellValidation.handleSubmit();
+                    return false;
+                  }}
+                >
                   <Row className="m-3 mt-5">
                     <Col md={6} sm={6} xs={12}>
                       <lable>First Name*</lable>
-                      <input
-                        type="email"
+                      <Input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="First Name"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.first_name || ""}
+                        invalid={
+                          sellValidation.touched.first_name &&
+                          sellValidation.errors.first_name
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.first_name &&
+                      sellValidation.errors.first_name ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.first_name}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                     <Col md={6} sm={6} xs={12}>
                       <lable>Phone*</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="phone"
+                        id="phone"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="+880- 123 234 ***"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.phone || ""}
+                        invalid={
+                          sellValidation.touched.phone &&
+                          sellValidation.errors.phone
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.phone &&
+                      sellValidation.errors.phone ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.phone}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                   </Row>
                   <Row className="m-3 mt-5">
                     <Col md={6} sm={6} xs={12}>
                       <lable>Email (Optional)</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="email"
+                        id="email"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
-                        placeholder="Enter your email address"
+                        placeholder="info@example.com"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.email || ""}
+                        invalid={
+                          sellValidation.touched.email &&
+                          sellValidation.errors.email
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.email &&
+                      sellValidation.errors.email ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.email}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                     <Col md={6} sm={6} xs={12}>
                       <lable>Location*</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="location"
+                        id="location"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="Enter your address"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.location || ""}
+                        invalid={
+                          sellValidation.touched.location &&
+                          sellValidation.errors.location
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.location &&
+                      sellValidation.errors.location ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.location}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                   </Row>
 
@@ -794,64 +1124,183 @@ const NavBar = () => {
 
                   <Row className="m-3 mt-5">
                     <Col md={6} sm={6} xs={12}>
-                      <lable>Car BRand Name*</lable>
-                      <input
-                        type="email"
+                      <lable>Car Brand Name*</lable>
+
+                      <Input
+                        type="text"
+                        name="carBrandName"
+                        id="carBrandName"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="Totyota"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.carBrandName || ""}
+                        invalid={
+                          sellValidation.touched.carBrandName &&
+                          sellValidation.errors.carBrandName
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.carBrandName &&
+                      sellValidation.errors.carBrandName ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.carBrandName}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                     <Col md={6} sm={6} xs={12}>
                       <lable>Model*</lable>
-                      <input
-                        type="email"
+                      <Input
+                        type="text"
+                        name="model"
+                        id="model"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
-                        placeholder="*** ***"
+                        placeholder="Hilux"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.model || ""}
+                        invalid={
+                          sellValidation.touched.model &&
+                          sellValidation.errors.model
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.model &&
+                      sellValidation.errors.model ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.model}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                   </Row>
 
                   <Row className="m-3 mt-5">
                     <Col md={6} sm={6} xs={12}>
                       <lable>Reg. Year*</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="regYear"
+                        id="regYear"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="Rs etN 80"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.regYear || ""}
+                        invalid={
+                          sellValidation.touched.regYear &&
+                          sellValidation.errors.regYear
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.regYear &&
+                      sellValidation.errors.regYear ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.regYear}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                     <Col md={6} sm={6} xs={12}>
                       <lable>Mileage*</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="mileage"
+                        id="mileage"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="23,456 miles"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.mileage || ""}
+                        invalid={
+                          sellValidation.touched.mileage &&
+                          sellValidation.errors.mileage
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.mileage &&
+                      sellValidation.errors.mileage ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.mileage}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                   </Row>
 
                   <Row className="m-3 mt-5">
                     <Col md={6} sm={6} xs={12}>
                       <lable>Fuel Type*</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="fuelType"
+                        id="fuelType"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="Petrol"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.fuelType || ""}
+                        invalid={
+                          sellValidation.touched.fuelType &&
+                          sellValidation.errors.fuelType
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.fuelType &&
+                      sellValidation.errors.fuelType ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.fuelType}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                     <Col md={6} sm={6} xs={12}>
                       <lable>Selling Price*</lable>
-                      <input
-                        type="email"
+
+                      <Input
+                        type="text"
+                        name="sellingPrice"
+                        id="sellingPrice"
                         className="form-control p-3"
-                        id="exampleFormControlInput1"
                         placeholder="Ex-GHc23,342,000"
+                        validate={{
+                          required: { value: true },
+                        }}
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        value={sellValidation.values.sellingPrice || ""}
+                        invalid={
+                          sellValidation.touched.sellingPrice &&
+                          sellValidation.errors.sellingPrice
+                            ? true
+                            : false
+                        }
                       />
+                      {sellValidation.touched.sellingPrice &&
+                      sellValidation.errors.sellingPrice ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.sellingPrice}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                   </Row>
                   <Row className="m-3 mt-5">
@@ -859,15 +1308,31 @@ const NavBar = () => {
                       <lable>Your Car Note*</lable>
                       <textarea
                         className="form-control p-3"
-                        id="exampleFormControlTextarea1"
+                        id="note"
+                        name="note"
                         placeholder="Write something ..."
                         rows="3"
+                        onChange={sellValidation.handleChange}
+                        onBlur={sellValidation.handleBlur}
+                        invalid={
+                          sellValidation.touched.sellingPrice &&
+                          sellValidation.errors.sellingPrice
+                            ? true
+                            : false
+                        }
                       ></textarea>
+                      {sellValidation.touched.note &&
+                      sellValidation.errors.note ? (
+                        <FormFeedback type="invalid">
+                          {sellValidation.errors.note}
+                        </FormFeedback>
+                      ) : null}
                     </Col>
                   </Row>
 
                   <div className="m-4">
                     <Button
+                      type="submit"
                       className="w-100 p-3 mt-3"
                       style={{
                         backgroundColor: "#00d084",
